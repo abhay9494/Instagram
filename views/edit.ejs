@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <img src="https://static.vecteezy.com/system/resources/previews/018/930/473/original/instagram-logo-instagram-icon-transparent-free-png.png"
+            alt="Insta Logo">
+        <h1 id="insta_name">Instagram</h1>
+    </header>
+    <main id="main_body">
+        <h2 id="edit_h1">Edit your Insta Post</h2>
+
+        <form class="post" method="post" action="/posts/<%=post.id%>?_method=PATCH" enctype="multipart/form-data">
+            <p>Post Username: <%=post.username%>
+            </p>
+            <p>Post Name: <%=post.name%>
+            </p>
+            <p>Image posted: <img src="<%=post.image%>" alt=""></p>
+
+            <input type="file" name="image" accept="image/*">
+            Comment:
+            <br><textarea contenteditable="true" rows="10" cols="30" name="comment"><%=post.comment%></textarea>
+            <!-- textarea ka "name" ko "content" kar diye taki backend ko pta chale ki ye "content" hai-->
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+</body>
+
+</html>
